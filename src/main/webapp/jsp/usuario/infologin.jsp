@@ -22,13 +22,12 @@
     if (user != null) {
         String us = user.getLogin();
         String usuario = us.substring(0, 1).toUpperCase() + us.substring(1);
-        String level = user.getObj_tipousuario().getDescripcion();
 %>
 <li>
     <%-- 
     <a href="#"> <i class="icon-user">Estás logueado como <%=usuario%> / <%=user.getTipoUsuario()%></i></a>
     --%>
-    <a href="#"> <i class="icon-user">Estás logueado como <%=usuario%> (Nivel: <%=level%>)</i></a>
+    <a href="#"> <i class="icon-user">Estás logueado como <%=usuario%> (Nivel: admin )</i></a>
 </li>
 <li><a href="jsp?ob=usuario&op=logout">Salir del sistema</a></li>
     <%} else {%>

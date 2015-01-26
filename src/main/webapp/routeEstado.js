@@ -1,5 +1,5 @@
-/*
- * Copyright (C) July 2014 Rafael Aznar
+/* 
+ * Copyright (C) 2014 Armando
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -15,33 +15,23 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
-package net.daw.bean.generic.specific.implementation;
-
-import net.daw.bean.generic.implementation.BeanGenImpl;
-import net.daw.bean.publicinterface.BeanInterface;
-import com.google.gson.annotations.Expose;
-
-public class UsuarioBeanGenSpImpl extends BeanGenImpl implements BeanInterface {
-
-    @Expose
-    private String login = "";
-    @Expose
-    private String password = "";
 
 
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
+function fEstadoRoute(op1, source) {
+    switch (op1) {
+        case "getpage":
+            var longitud = source.list.length;
+            var tabla = "<table border='1'><tr><th>Id</th><th>Tipo</th></tr>";
+            for (i = 0; i < longitud; i++) {
+                tabla += "<tr>"
+                tabla += "<td>" + source.list[i].id + "</td>";
+                tabla += "<td>" + source.list[i].tipo + "</td>";
+                tabla += "</tr>"
+            }
+            tabla += "</table>";
+            $("#tabla1").html(tabla);
+            break;
+        default:
+            break;
     }
 }

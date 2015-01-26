@@ -57,14 +57,5 @@ public class PublicacionControlOperationGenSpImpl extends ControlOperationGenImp
         return result;
     }
 
-    private void closeDB() throws SQLException, Exception {
-        try {
-            if (connection != null) {
-                connection.close();
-            }
-            DataConnectionSource.disposeConnection();
-        } catch (Exception ex) {
-            ExceptionBooster.boost(new Exception(this.getClass().getName() + ":closeDB ERROR: " + ex.getMessage()));
-        }
-    }
+
 }

@@ -51,14 +51,14 @@ public class OrdenadorControlOperationSpImpl implements ControlOperationInterfac
     @Override
     public String get(HttpServletRequest request) throws Exception {
         String result = null;
-        try {
+        try {/*
             //ejemplo de control de permisos simple
             UsuarioBeanGenSpImpl oUsuario = (UsuarioBeanGenSpImpl) request.getSession().getAttribute("usuarioBean");
             if (!oUsuario.getObj_tipousuario().getDescripcion().equalsIgnoreCase("visitante")) {
                 result = oOrdenadorService.get(ParameterCooker.prepareId(request));
             } else {
                 ExceptionBooster.boost(new Exception(this.getClass().getName() + ":get ERROR: not enought perssions"));
-            }
+            }*/
             closeDB();
         } catch (Exception ex) {
             ExceptionBooster.boost(new Exception(this.getClass().getName() + ":get ERROR: " + ex.getMessage()));

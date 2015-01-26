@@ -131,7 +131,7 @@ public class ControlOperationGenImpl implements ControlOperationInterface {
         return result;
     }
 
-    private void closeDB() throws SQLException, Exception {
+    protected void closeDB() throws SQLException, Exception {
         if (connection != null) {
             connection.close();
         }

@@ -29,7 +29,7 @@
                 <%
                     if (EstadoHelper.getTipo_estado() == EstadoHelper.getTipo_estado().Debug) {
                 %>
-                <input value="rafael" class="form-control"  id="inputLogin" type="text" placeholder="nombre de usuario" required="" autofocus="" name="login" />                                                    
+                <input value="piscul" class="form-control"  id="inputLogin" type="text" placeholder="nombre de usuario" required="" autofocus="" name="login" />                                                    
                 <%
                 } else {
                 %>
@@ -41,7 +41,7 @@
                 <%
                     if (EstadoHelper.getTipo_estado() == EstadoHelper.getTipo_estado().Debug) {
                 %>
-                <input value="rafael" class="form-control" type="password" id="inputPassword" placeholder="contraseña"  required="" name="password" />                                                               
+                <input value="piscul" class="form-control" type="password" id="inputPassword" placeholder="contraseña"  required="" name="password" />                                                               
                 <%
                 } else {
                 %>

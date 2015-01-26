@@ -25,7 +25,6 @@ public class ClienteBeanGenSpImpl extends BeanGenImpl implements BeanInterface {
     private String nombre;
     private String ape1;
     private String ape2;
-    private String email;
 
     public ClienteBeanGenSpImpl() {
     }
@@ -58,11 +57,4 @@ public class ClienteBeanGenSpImpl extends BeanGenImpl implements BeanInterface {
         this.ape2 = ape2;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 }

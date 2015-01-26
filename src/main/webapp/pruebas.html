@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--
+Copyright (C) 2014 Armando
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+-->
+<html>
+    <head>
+        <title>Estudiar cliente</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    </head>
+    <body>
+        <form class="form-horizontal" action="" id="estadoForm" name="formulario">
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="objeto">Objeto:</label>
+                <div class="col-sm-2">
+                    <input type="text" id="objeto" class="form-control" name="ob" placeholder="Ponga aquí el objeto" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label"  for="operacion">Operacion:</label>
+                <div class="col-sm-6">
+                    <input type="text" id="operacion" class="form-control"  name="op"  placeholder="Ponga aquí la operación" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button class="btn btn-primary" id="submitForm">Guardar</button>
+                </div>
+            </div>
+        </form>
+
+        <div id="tabla1"></div>
+        <script src="routePublicacion.js" charset="UTF-8"></script>
+        <script src="routeEstado.js" charset="UTF-8"></script>
+        <script>
+            $(document).ready(function () {
+                $("#submitForm").click(function () {
+                    var ob1 = $("#objeto").val();
+                    var op = "getaggregateviewsome";
+                    var op1 = $("#operacion").val();
+                    
+                    
+                    $.ajax({
+                        url: "http://localhost:8083/correccionExamen2014/json?ob=" + ob1 + "&op=" + op1,
+                        type: "GET",
+                        dataType: "json",
+                        success: function (source) {
+                            if (ob1 == "publicacion") {
+                                fPublicacionRoute(op1, source);
+                            }
+                            if (ob1 == "estado") {
+                                fEstadoRoute(op1, source);
+                            }
+                        }
+                    })
+                    return false;
+                });
+            });
+        </script>
+    </body>
+</html>
